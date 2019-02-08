@@ -1,7 +1,9 @@
 module Markov
   VERSION = "0.0.1"
 
+  # Defines Markov Chaining
   class Chain
+    # Breaks down seed text for markov chaining
     def initialize(mc)
       @words = Hash.new
       wordList = mc.split
@@ -9,12 +11,12 @@ module Markov
         add(word, wordList[index+1]) if index <= wordList.size - 2
       end
     end
-
+    # Adds words to hash
     def add(word, nextWord)
       @words[word] = Hash.new(0) if !@words[word]
       @words[word][nextWord] += 1
     end
-
+    # Gets words from hash
     def get(word)
       return "" if !@words[word]
       follow = @words[word]
@@ -30,12 +32,13 @@ module Markov
     end
 
   end
-
+  # Pauses console screen for readability
   class Screen
     def pause
       STDIN.gets
     end
   end
+# MAIN SCRIPT
 
   CONSOLE_SCREEN = Screen.new
   mc = Chain.new(File.read("mobydick.txt"))
