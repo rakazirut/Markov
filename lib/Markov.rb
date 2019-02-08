@@ -1,3 +1,4 @@
+# Reference: https://gist.github.com/alexpatriquin/11226396
 module Markov
   VERSION = "0.0.1"
 
