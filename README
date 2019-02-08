@@ -1,0 +1,7 @@
+Markov Chaining...
+
+...is a stochastic model describing a sequence of possible events.
+The probability of each event depends only on the state attained in the previous event.
+
+Whatever that means...implementation in Ruby.
+
